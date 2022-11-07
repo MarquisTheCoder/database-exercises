@@ -12,3 +12,8 @@ use employees
        ORDER BY first_name DESC, last_name ASC
    LIMIT 25;
 
+   SELECT COUNT(gender), gender from employees.employees
+        WHERE first_name = 'Irena'
+            OR first_name = 'Vidya'
+            OR first_name = 'Maya'
+   GROUP BY gender
