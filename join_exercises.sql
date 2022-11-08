@@ -37,6 +37,14 @@ INNER JOIN departments as d ON de.dept_no = d.dept_no
 WHERE d.dept_no = 'd009' GROUP BY t.title
 
 
+select t.title, count(e.emp_no) as Total from departments as dpts
+join current_dept_emp as dmp on dmp.dept_no = dpts.dept_no
+join employees as e on e.emp_no = dmp.emp_no
+join titles as t on t.emp_no = e.emp_no
+where dmp.dept_no = 'd009' and t.to_date = '9999-01-01'
+group by t.title
+
+
 SELECT d.dept_name, CONCAT(e.first_name,' ', e.last_name) AS `Department Manager`,s.salary as Salary, dm.to_date
 FROM employees AS e
 INNER JOIN salaries as s ON s.emp_no = e.emp_no
