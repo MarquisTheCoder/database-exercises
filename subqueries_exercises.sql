@@ -9,13 +9,21 @@ WHERE hire_date IN (
     WHERE emp_no = 101010
 );
 
+/*
+--select distinct concat( t.title) as `Job Description`,
+--count(e.first_name) as `Aamod Count` from employees as e
+--JOIN titles as t on e.emp_no = t.emp_no
+--where first_name = 'Aamod' group by t.title
+*/
 
+/*getting all titles held by employee 'Aamod' */
+CREATE VIEW IF NOT EXIST find_aamods as
+select title, COUNT(title) from titles as tit join
+    employees as emp on emp.emp_no = tit.emp_no
+        where emp.emp_no in (select emp_no from employees where first_name = 'Aamod')
+    GROUP BY title;
 
-
-select distinct concat( t.title) as `Job Description`,
-count(e.first_name) as `Aamod Count` from employees as e
-JOIN titles as t on e.emp_no = t.emp_no
-where first_name = 'Aamod' group by t.title
+select * from find_aamods;
 
 
 /*getting all the current female managers in the company*/
