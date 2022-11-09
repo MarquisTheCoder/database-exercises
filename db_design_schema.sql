@@ -35,3 +35,8 @@ values ((select id from authors where first_name = 'Kurt' and last_name = 'Vonne
         'The universe is a big place, perhaps the biggest.');
 INSERT INTO quotes (author_id, content)
 VALUES ((select id from authors where first_name = 'Douglas' and last_name = 'Adams'), 'Don''t Panic.');
+
+
+create table ads(
+    ad_id int unsigned
+);
