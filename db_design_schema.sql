@@ -37,6 +37,10 @@ INSERT INTO quotes (author_id, content)
 VALUES ((select id from authors where first_name = 'Douglas' and last_name = 'Adams'), 'Don''t Panic.');
 
 
-create table ads(
-    ad_id int unsigned
-);
+use adlister;
+select user_name from users as u
+join ads as a on a.user_id = u.id
+
+select c.category from categories as c
+join cat_ad as ca on ca.ca_id = c_id;
+join ()
