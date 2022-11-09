@@ -1,6 +1,5 @@
 CREATE DATABASE IF NOT EXISTS adlister;
 
-    GO
     USE adlister;
 
 
@@ -48,6 +47,4 @@ CREATE DATABASE IF NOT EXISTS adlister;
         foreign key(ad_id) references ads(ad_id),
         foreign key(cat_id) references categories(cat_id)
     );
-
-
 
