@@ -1,6 +1,8 @@
 CREATE DATABASE IF NOT EXISTS adlister;
 
+    GO
     USE adlister;
+
 
     CREATE TABLE IF NOT EXISTS users
     (   user_id int unsigned not null auto_increment,
